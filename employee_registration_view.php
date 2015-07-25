@@ -25,24 +25,21 @@ document.getElementById("link").value="";
 		</script>
 </head>
 	
-	<body onLoad="clearform()">
-
+	<body onLoad="clearform()" background="gray.png">
+<a href="login.php" id="login"> Login</a>
+<a href='home.php' id='home'>Home</a>
 <center>
 
 <ul><li>
             <a href="#">Users &#9662;</a>
             <ul class="dropdown">
-                <li><a href="login.php">Existing user - Login</a></li>
                 <li><a href="student_registration_view.php">Student</a></li>
                 <li><a href="employee_registration_view.php">Employer</a></li>
             </ul>
 </li></ul>
-    <center>  <form id="f1" action="" method="post">
+    <center>  <form id="f1" action="register_emp.php" method="post">
+      <input type="text" name="type" id="type" value="employee" style="visibility:hidden;" />
       <p>Organization Name: </p>
-        <p>
-          <input type="text" name="o_name" id="o_name" required="true" style="margin-bottom: 10px;"/>
-        </p>
-        <p>Name: </p>
         <p>
           <input type="text" name="name" id="name" required="true" style="margin-bottom: 10px;"/>
         </p>
@@ -68,8 +65,6 @@ document.getElementById("link").value="";
         <p>
           <input type="submit" value="Register" name="Register" style="margin-bottom: 10px;">
         </p>
-        <p>or</p>
-		 <a href="login.php">Click here to log in!! </a>
         <p>&nbsp; </p>
         <p>&nbsp;</p>
 		

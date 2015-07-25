@@ -48,7 +48,9 @@
     }
 
     //Create query
-    $qry="SELECT * FROM login WHERE email='$email' AND password='$password'";
+    $qry="SELECT l.email,l.is_emp,l.is_std,u.user_id FROM login l 
+            inner join users u on u.email = l.email
+            WHERE l.email='$email' AND l.password='$password'";
     $result=mysql_query($qry);
 
     //Check whether the query was successful or not
@@ -59,11 +61,12 @@
     //Login Successful
             session_regenerate_id();
             $member = mysql_fetch_assoc($result);
-            $_SESSION['SESS_MEMBER_ID'] = $member['user_id'];
-            $_SESSION['SESS_FIRST_NAME'] = $member['user_name'];
-
-
-            header("location: latlong.php");
+            $_SESSION['emp'] = $member['is_emp'];
+            $_SESSION['std'] = $member['is_std'];
+            $_SESSION['email'] = $member['email'];
+            $_SESSION['user_id'] = $member['user_id'];
+         
+            header("location: home.php");
             exit();
         }
         else 

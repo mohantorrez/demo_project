@@ -14,7 +14,7 @@ document.getElementById("pass").value="";
 		</script>
 </head>
 	
-
+<body background="gray.png">
 <center>
 <form id="f1" action="login_validation.php" method="post">
 <label><p>Email :</p></label>
@@ -25,11 +25,13 @@ document.getElementById("pass").value="";
 <input type="submit" value=" Login "/>
 </p>
 </form></center>
+<a href="login.php" id="login"> Login</a>
+<a href='home.php' id='home'>Home</a>
 <ul><li>
             <a href="#">Register &#9662;</a>
             <ul class="dropdown">
-            	<li><a href="login.php">Existing user - Login</a></li>
-                <li><a href="student_registration_view.php">New Student - Student</a></li>
-                <li><a href="employee_registration_view.php">New Company - Employer</a></li>
+                <li><a href="student_registration_view.php">Student</a></li>
+                <li><a href="employee_registration_view.php">Employer</a></li>
             </ul>
 </li></ul>
+</body>
